@@ -1,0 +1,14 @@
+@import url('https://unpkg.com/@phosphor-icons/web@2.1.1/dist/phosphor.css');
+
+@import 'structure/_header/_header';
+@import 'structure/_menu/_menu';
+@import 'structure/_area-site/area-site';
+@import 'structure/_footer/footer';
+
+@import 'structure/_button/_button';
+
+html,
+body {
+  width: 100%;
+  height: 100%;
+}

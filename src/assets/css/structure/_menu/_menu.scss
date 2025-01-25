@@ -1,0 +1,142 @@
+.area-menu {
+  background-color: #043ea6;
+  border-right: solid 3px #bdbdbd;
+  width: 260px !important;
+  height: calc(100vh - 179px);
+
+  & > div {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: inherit;
+    justify-content: space-between;
+  }
+
+  nav {
+    background: transparent !important;
+    padding: 0;
+
+    & > div {
+      padding: 0;
+    }
+
+    a {
+      padding: 10px;
+      text-transform: uppercase;
+      font-weight: 700;
+      color: #fff;
+
+      &:hover,
+      &:active,
+      &:focus,
+      &:focus-visible,
+      &.show,
+      &.active {
+        background-color: #173764;
+        color: #ffcf00 !important;
+      }
+    }
+
+    .dropdown-menu {
+      background-color: #173764;
+      margin: 0;
+      margin-block-start: -1px;
+      border-top: 0;
+      border-bottom: solid 2px #173764;
+      border-radius: 0;
+      padding: 0;
+
+      a {
+        padding: 10px 22px;
+
+        &:hover,
+        &:active,
+        &:focus,
+        &:focus-visible,
+        &.show,
+        &.active {
+          background-color: #043ea6;
+        }
+      }
+    }
+  }
+
+  &.collapse-area-menu {
+    width: 0px !important;
+    border: 0 !important;
+  }
+
+  img {
+    margin: 0 auto;
+    margin-block-end: 10px;
+  }
+}
+
+// Menu mobile
+.offcanvas-menu {
+  background-color: #043ea6 !important;
+
+  .offcanvas-header {
+    color: #fff;
+
+    button {
+      background-image: url('data:image/svg+xml;charset=UTF-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256"><rect width="256" height="256" fill="none"/><line x1="200" y1="56" x2="56" y2="200" fill="none" stroke="white" stroke-linecap="round" stroke-linejoin="round" stroke-width="12"/><line x1="200" y1="200" x2="56" y2="56" fill="none" stroke="white" stroke-linecap="round" stroke-linejoin="round" stroke-width="12"/></svg>');
+      background-repeat: no-repeat;
+      background-size: contain;
+      background-position: center;
+    }
+  }
+
+  .offcanvas-menu-area {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    justify-content: space-between;
+    padding: 16px 0;
+
+    a {
+      padding: 10px 16px;
+      text-transform: uppercase;
+      font-weight: 700;
+      color: #fff;
+
+      &:hover,
+      &:active,
+      &:focus,
+      &:focus-visible,
+      &.show,
+      &.active {
+        background-color: #173764;
+        color: #ffcf00 !important;
+      }
+    }
+
+    .dropdown-menu {
+      background-color: #173764;
+      margin: 0;
+      margin-block-start: -1px;
+      border-top: 0;
+      border-bottom: solid 2px #173764;
+      border-radius: 0;
+      padding: 0;
+
+      a {
+        padding: 10px 22px;
+
+        &:hover,
+        &:active,
+        &:focus,
+        &:focus-visible,
+        &.show,
+        &.active {
+          background-color: #043ea6;
+        }
+      }
+    }
+
+    img {
+      width: 166px;
+      margin: 0 auto;
+    }
+  }
+}

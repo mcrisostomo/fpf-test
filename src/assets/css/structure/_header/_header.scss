@@ -1,0 +1,52 @@
+header {
+  background-image: url('../img/bg-menu-out-2024.png');
+  background-position: center top;
+  height: 179px;
+  border-bottom: solid 3px #bdbdbd;
+
+  @media screen and (max-width: 768px) {
+    height: calc(179px / 2);
+  }
+
+  .header-content {
+    & > div {
+      display: flex;
+      align-items: center;
+      justify-content: start;
+
+      @media screen and (max-width: 768px) {
+        justify-content: center;
+
+        button {
+          &.btn-menu {
+            position: absolute;
+            left: 10px;
+            margin: 0 !important;
+          }
+        }
+
+        .user-badge {
+          position: absolute;
+          right: 10px;
+          border-width: 2px !important;
+
+          svg {
+            width: 32px;
+            height: 32px;
+          }
+        }
+
+        img {
+          height: calc(144px / 2);
+        }
+      }
+
+      .user-badge {
+        padding: 5px;
+        background-color: #fff;
+        border: solid 3px #bdbdbd;
+        border-radius: 9999px;
+      }
+    }
+  }
+}
