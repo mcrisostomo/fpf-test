@@ -137,10 +137,6 @@ const EditPeople = (props: Props) => {
       status.current &&
         (status.current.value = props.people[props.index].status || '');
     }
-
-    return () => {
-      console.log('desmontado');
-    };
   }, [props.people, props.index]);
 
   return (

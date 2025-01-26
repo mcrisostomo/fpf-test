@@ -1,5 +1,5 @@
-import React, { useEffect, useState } from 'react';
-import { Button, Form, Modal, Spinner } from 'react-bootstrap';
+import React, { useState } from 'react';
+import { Button, Modal, Spinner } from 'react-bootstrap';
 
 interface Props {
   showDeleteModal: boolean;
