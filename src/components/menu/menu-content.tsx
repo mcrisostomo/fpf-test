@@ -1,16 +1,52 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { Nav, NavDropdown } from 'react-bootstrap';
+import { NavLink, useLocation } from 'react-router';
 
 const MenuContent = () => {
+  const location = useLocation();
+
+  const [show, setShow] = useState(false);
+
+  const isActive = (path: string) => {
+    return location.pathname === path;
+  };
+
+  const isExpanded = (isOpen: boolean) => {
+    setShow(isOpen);
+  };
+
+  useEffect(() => {
+    if (
+      location.pathname === '/list-people' ||
+      location.pathname === '/add-people'
+    ) {
+      setShow(true);
+    }
+  }, [show]);
+
   return (
     <Nav>
-      <Nav.Link href="#action1">Home</Nav.Link>
-      <Nav.Link href="#action2">Link</Nav.Link>
-      <NavDropdown title="Dropdown" id={`offcanvasNavbarDropdown-expand-xs`}>
-        <NavDropdown.Item href="#action3">Action</NavDropdown.Item>
-        <NavDropdown.Item href="#action4">Another action</NavDropdown.Item>
+      <Nav.Link
+        as={NavLink}
+        to="/home"
+        active={isActive('/home') ? true : false}
+      >
+        Home
+      </Nav.Link>
+      <NavDropdown
+        title="Cadastro de pessoas"
+        id={`offcanvasNavbarDropdown-expand-xs`}
+        show={show}
+        onToggle={isExpanded}
+      >
+        <NavDropdown.Item
+          as={NavLink}
+          to="/list-people"
+          active={isActive('/list-people') ? true : false}
+        >
+          Listar pessoas
+        </NavDropdown.Item>
       </NavDropdown>
-      <Nav.Link href="#action3">Link Novo</Nav.Link>
     </Nav>
   );
 };

@@ -1,0 +1,14 @@
+.modal {
+  .modal-body {
+    .image-area {
+      display: flex;
+      flex-direction: column;
+      align-content: center;
+
+      img,
+      svg {
+        width: 100%;
+      }
+    }
+  }
+}

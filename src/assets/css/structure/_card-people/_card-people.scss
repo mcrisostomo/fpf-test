@@ -1,0 +1,49 @@
+.card-people {
+  .card {
+    border: solid 1px #bdbdbd;
+
+    .card-title {
+      padding-bottom: 5px;
+      border-bottom: solid 1px #bdbdbd;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+
+      .action-button {
+        width: fit-content;
+        display: flex;
+
+        button {
+          margin-right: 10px;
+          border-radius: 9999px;
+          padding: 10px;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+
+          &:last-child {
+            margin-right: 0;
+          }
+        }
+      }
+    }
+
+    .card-body {
+      @media screen and (max-width: 768px) {
+        img {
+          padding-bottom: 20px;
+          margin-bottom: 5px;
+          border-bottom: solid 1px #bdbdbd;
+        }
+      }
+
+      .card-text {
+        margin-bottom: 5px;
+
+        span {
+          font-weight: 700;
+        }
+      }
+    }
+  }
+}

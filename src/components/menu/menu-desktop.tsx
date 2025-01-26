@@ -1,5 +1,5 @@
 import React from 'react';
-import { Container, Navbar, Offcanvas } from 'react-bootstrap';
+import { Container, Navbar } from 'react-bootstrap';
 import MenuContent from './menu-content';
 import LogoFanaticos from './../../assets/img/Logo_Fanaticos.png';
 
