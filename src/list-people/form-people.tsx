@@ -2,20 +2,29 @@ import React from 'react';
 import { Button, Col, Form, Row } from 'react-bootstrap';
 
 interface Props {
-  imagemPreview: any;
-  profileImg: any;
   handleFileChange: any;
   handleChooseProfileImage: any;
   handleRemoveProfileImage: any;
+  imagemPreview: any;
+  profileImg: any;
+  profileImgError: any;
   fullname: any;
+  fullnameError: any;
   id: any;
+  idError: any;
   address: any;
+  addressError: any;
   email: any;
+  emailError: any;
   phone: any;
+  phoneError: any;
   birthdate: any;
+  birthdateError: any;
   gender: any;
+  genderError: any;
   isEditForm?: boolean;
   status?: any;
+  statusError?: any;
 }
 
 const FormPeople = (props: Props) => {
@@ -44,13 +53,17 @@ const FormPeople = (props: Props) => {
               onChange={props.handleFileChange}
               className="d-none"
             />
+            <Form.Text
+              ref={props.profileImgError}
+              className="invalid-feedback"
+            ></Form.Text>
           </Form.Group>
           <Button onClick={() => props.handleChooseProfileImage()}>
             {props.imagemPreview ? 'Alterar ' : 'Adicionar'} foto
           </Button>
           {props.imagemPreview && (
             <Button
-              className="mt-2"
+              className="my-4"
               variant="danger"
               onClick={() => props.handleRemoveProfileImage()}
             >
@@ -66,14 +79,23 @@ const FormPeople = (props: Props) => {
               type="text"
               placeholder="Digite seu nome"
             />
+            <Form.Text
+              ref={props.fullnameError}
+              className="invalid-feedback"
+            ></Form.Text>
           </Form.Group>
           <Form.Group className="mb-3">
             <Form.Label>CPF</Form.Label>
             <Form.Control
               ref={props.id}
               type="text"
-              placeholder="999.999.999-99"
+              placeholder="99999999999"
+              maxLength={11}
             />
+            <Form.Text
+              ref={props.idError}
+              className="invalid-feedback"
+            ></Form.Text>
           </Form.Group>
           <Form.Group className="mb-3">
             <Form.Label>Endereço</Form.Label>
@@ -83,6 +105,10 @@ const FormPeople = (props: Props) => {
               placeholder="Digite seu endereço completo"
               required
             />
+            <Form.Text
+              ref={props.addressError}
+              className="invalid-feedback"
+            ></Form.Text>
           </Form.Group>
           <Form.Group className="mb-3">
             <Form.Label>E-mail</Form.Label>
@@ -91,22 +117,35 @@ const FormPeople = (props: Props) => {
               type="email"
               placeholder="ex: nome@provedor.com.br"
             />
+            <Form.Text
+              ref={props.emailError}
+              className="invalid-feedback"
+            ></Form.Text>
           </Form.Group>
           <Form.Group className="mb-3">
             <Form.Label>Telefone</Form.Label>
             <Form.Control
               ref={props.phone}
               type="phone"
-              placeholder="(11) 99999-9999"
+              placeholder="11999999999"
+              maxLength={11}
             />
+            <Form.Text
+              ref={props.phoneError}
+              className="invalid-feedback"
+            ></Form.Text>
           </Form.Group>
           <Form.Group className="mb-3">
             <Form.Label>Data de nascimento</Form.Label>
             <Form.Control
               ref={props.birthdate}
-              type="text"
+              type="date"
               placeholder="01/10/1966"
             />
+            <Form.Text
+              ref={props.birthdateError}
+              className="invalid-feedback"
+            ></Form.Text>
           </Form.Group>
           <Form.Group className="mb-3">
             <Form.Label>Gênero</Form.Label>
@@ -116,6 +155,10 @@ const FormPeople = (props: Props) => {
               <option value="2">Feminino</option>
               <option value="3">Outros</option>
             </Form.Select>
+            <Form.Text
+              ref={props.genderError}
+              className="invalid-feedback"
+            ></Form.Text>
           </Form.Group>
           {props.isEditForm ? (
             <Form.Group className="mb-3">
@@ -125,6 +168,10 @@ const FormPeople = (props: Props) => {
                 <option value="1">Ativo</option>
                 <option value="2">Inativo</option>
               </Form.Select>
+              <Form.Text
+                ref={props.statusError}
+                className="invalid-feedback"
+              ></Form.Text>
             </Form.Group>
           ) : (
             ''

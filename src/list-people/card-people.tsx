@@ -28,6 +28,36 @@ const CardPeople = (props: Props) => {
     return statusPeople;
   };
 
+  const ageCalc = (birthdate: any) => {
+    const today = new Date();
+    const birth = new Date(birthdate);
+
+    let age = today.getFullYear() - birth.getFullYear();
+    const mes = today.getMonth();
+    const dia = today.getDate();
+
+    if (
+      mes < birth.getMonth() ||
+      (mes === birth.getMonth() && dia < birth.getDate())
+    ) {
+      age--;
+    }
+
+    return `${age} anos`;
+  };
+
+  const formatBirthdate = (birthdate: any) => {
+    const date = new Date(birthdate);
+
+    const formattedDate = date.toLocaleDateString('pt-BR');
+
+    return formattedDate;
+  };
+
+  const formatId = (id: any) => {
+    return id.replace(/(\d{3})(\d{3})(\d{3})(\d{2})/, '$1.$2.$3-$4');
+  };
+
   return (
     <Row xs={1} md={2} className="g-4">
       {props.people.map((e: any, i: any) => (
@@ -73,11 +103,11 @@ const CardPeople = (props: Props) => {
                   <div className="card-text">
                     <div className="user-info">
                       <span>Idade:</span>
-                      <p>{e.age} anos</p>
+                      <p>{ageCalc(e.birthdate)}</p>
                     </div>
                     <div className="user-info">
                       <span>CPF:</span>
-                      <p>{e.id}</p>
+                      <p>{formatId(e.id)}</p>
                     </div>
                     <div className="user-info">
                       <span>E-mail:</span>
@@ -89,7 +119,7 @@ const CardPeople = (props: Props) => {
                     </div>
                     <div className="user-info">
                       <span>Data de nascimento:</span>
-                      <p>{e.birthdate}</p>
+                      <p>{formatBirthdate(e.birthdate)}</p>
                     </div>
                     <div className="user-info">
                       <span>Status:</span>
