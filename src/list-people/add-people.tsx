@@ -1,13 +1,5 @@
 import React, { useRef, useState } from 'react';
-import {
-  Button,
-  Col,
-  Form,
-  InputGroup,
-  Modal,
-  Row,
-  Spinner,
-} from 'react-bootstrap';
+import { Button, Col, Form, Modal, Row, Spinner } from 'react-bootstrap';
 
 interface Props {
   showAddModal: boolean;
