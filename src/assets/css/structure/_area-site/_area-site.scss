@@ -1,0 +1,9 @@
+.site-content {
+  height: calc(100vh - 179px - 56px);
+  overflow-y: auto;
+
+  @media screen and (max-width: 768px) {
+    height: calc(100vh - 89.5px - 80px);
+    padding-left: 25px !important;
+  }
+}
