@@ -10,6 +10,24 @@ interface Props {
 }
 
 const CardPeople = (props: Props) => {
+  const statusPeople = (status: string): string => {
+    let statusPeople;
+
+    switch (status) {
+      case '1':
+        statusPeople = 'Ativo';
+        break;
+      case '2':
+        statusPeople = 'Inativo';
+        break;
+      default:
+        statusPeople = 'Desconhecido';
+        break;
+    }
+
+    return statusPeople;
+  };
+
   return (
     <Row xs={1} md={2} className="g-4">
       {props.people.map((e: any, i: any) => (
@@ -75,7 +93,7 @@ const CardPeople = (props: Props) => {
                     </div>
                     <div className="user-info">
                       <span>Status:</span>
-                      <p>{e.status}</p>
+                      <p>{statusPeople(e.status)}</p>
                     </div>
                   </div>
                 </Col>
