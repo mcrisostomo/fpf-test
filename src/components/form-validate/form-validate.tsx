@@ -78,7 +78,7 @@ export default function FormValidate(field: any) {
   };
 
   const emailValidate = () => {
-    const emailRegex = /^[\w\.-]+@[a-zA-Z\d\.-]+\.[a-zA-Z]{2,}$/;
+    const emailRegex = /^[\w.-]+@[a-zA-Z\d.-]+\.[a-zA-Z]{2,}$/;
 
     if (field.email.current?.value === '') {
       field.emailError.current?.classList.add('d-block');

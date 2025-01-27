@@ -20,6 +20,7 @@
     "web-vitals": "^2.1.4"
   },
   "devDependencies": {
+    "@babel/plugin-proposal-private-property-in-object": "^7.21.11",
     "@types/holderjs": "^2.9.4",
     "@types/jest": "^29.5.14",
     "@types/react": "^18.3.18",

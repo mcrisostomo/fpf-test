@@ -8,7 +8,7 @@ const Home = () => {
     if (url === '/') {
       window.location.href = '/home';
     }
-  }, []);
+  }, [url]);
 
   return (
     <Row className="home-area">

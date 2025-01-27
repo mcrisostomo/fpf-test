@@ -22,7 +22,7 @@ const MenuContent = () => {
     ) {
       setShow(true);
     }
-  }, [show]);
+  }, [location.pathname]);
 
   return (
     <Nav>
