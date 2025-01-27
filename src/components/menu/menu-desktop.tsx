@@ -5,6 +5,7 @@ import LogoFanaticos from './../../assets/img/Logo_Fanaticos.png';
 
 interface Props {
   menuOpened: boolean;
+  mobileScreen: any;
 }
 
 const MenuDesktop = (props: Props) => {
@@ -27,7 +28,7 @@ const MenuDesktop = (props: Props) => {
             id={`offcanvasNavbar-expand-xs`}
             aria-labelledby={`offcanvasNavbarLabel-expand-xs`}
           >
-            <MenuContent />
+            <MenuContent mobileScreen={props.mobileScreen} />
           </Navbar.Collapse>
         </Container>
       </Navbar>

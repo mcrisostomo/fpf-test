@@ -35,9 +35,12 @@ const App = () => {
             } align-items-start`}
           >
             {mobileScreen ? (
-              <MenuMobile />
+              <MenuMobile mobileScreen={mobileScreen} />
             ) : (
-              <MenuDesktop menuOpened={menuOpened} />
+              <MenuDesktop
+                menuOpened={menuOpened}
+                mobileScreen={mobileScreen}
+              />
             )}
           </Col>
           <Col

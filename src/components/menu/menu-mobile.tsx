@@ -3,7 +3,11 @@ import { Container, Navbar, Offcanvas } from 'react-bootstrap';
 import MenuContent from './menu-content';
 import LogoFanaticos from './../../assets/img/Logo_Fanaticos.png';
 
-const MenuMobile = () => {
+interface Props {
+  mobileScreen: any;
+}
+
+const MenuMobile = (props: Props) => {
   return (
     <Navbar
       collapseOnSelect
@@ -28,7 +32,7 @@ const MenuMobile = () => {
             </Offcanvas.Title>
           </Offcanvas.Header>
           <Offcanvas.Body className="offcanvas-menu-area">
-            <MenuContent />
+            <MenuContent mobileScreen={props.mobileScreen} />
             <img src={LogoFanaticos} alt="Logo Fanáticos por Futebol" />
           </Offcanvas.Body>
         </Navbar.Offcanvas>
